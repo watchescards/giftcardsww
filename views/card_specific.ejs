@@ -1,0 +1,163 @@
+   <% include ./partials/cards_header %>
+
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="single-slider slider-height2 d-flex align-items-center" data-background="../images/<%=cardss.card_image%>">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center" >
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <section class="confirmation_part section_padding">
+        <h1 style="color: black;text-align: center;"><%=cardss.card_name%></h1>
+    <div class="container">
+      <div class="row">
+   
+        <div class="col-lg-6 col-lx-4">
+          <div class="single_confirmation_details">
+            <h4><%=cardss.card_name%> Card Details</h4>
+            <ul>
+              <li>
+                <p>Customer Care</p><span>: <%=cardss.customer_care%></span>
+              </li>
+              <li>
+                <p>Head Quarters</p><span>:  <%=cardss.hq%></span>
+              </li>
+              <li>
+                <p>Mail Id</p><span>: USD 2210</span>
+              </li><hr>
+              <li>
+               <strong> <p style="text-align: center;"><%=cardss.card_name%> balance Check</p></strong>
+              </li><br>
+               <li>
+                <form action="/check_balance" method="POST">
+                <p>Card Number</p><span>              <div class="mt-10">
+                <input type="text"  name="gift_card_number" id="gift_card_number" class="single-input" placeholder="<%=cardss.card_name%>Card Number"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                maxlength = "<%=cardss.max_card%>" minlength="<%=cardss.max_card%>" autocomplete="off" type="number" required="true">
+              </div></span>
+              </li>
+               <li>
+                <p>Pin</p><span>              <div class="mt-10">
+                <input type="text" class="single-input" name="pin_number" id="pin_number4" class="form-control error_message the_input_element required numbers_only"  title="" placeholder="XXXX" autocomplete="off" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                maxlength = "<%=cardss.max_pin%>"  autocomplete="off">
+                  <input type="hidden" name="<%=cardss.card_name%>">
+              </div></span>
+              </li>
+ <span id="msg" style="color: red;"></span><br>
+
+              <span>&nbsp;&nbsp;<input type="submit" value="Check Now" class="genric-btn info" onclick="return cardcheck()" /></span>
+              </form>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-lx-4">
+          <form action="/add_to_cart" method="POST">
+          <div class="single_confirmation_details">
+            <h4><%=cardss.card_name%> Card Details</h4>
+            <ul>
+              <li>
+                <p>Quantity</p><span>              <div class="mt-10">
+                <input type="text" name="quantity" placeholder="Enter Qantity"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
+                  class="single-input">
+              </div></span>
+              </li>
+              <li>
+                <p>Select Amount</p><span><div class="form-select" id="default-select">
+                      <select>
+                        <option value="$25">$25</option>
+                  <option value="$50">$50</option>
+                  <option value="$75">$75</option>
+                  <option value="$100">$100</option>
+                  <option value="$150">$150</option>
+                  </select>
+                </div></span>
+              </li>
+              <li>
+                <p>FROM</p><span>              <div class="mt-10">
+                <input type="text" name="quantity" placeholder="Enter From"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
+                  class="single-input">
+              </div></span>
+              </li>
+             <li>
+                <p>TO</p><span>              <div class="mt-10">
+                <input type="text" name="quantity" placeholder="Enter To"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
+                  class="single-input">
+              </div></span>
+              </li>
+              <li>
+                <p>Email</p><span>              <div class="mt-10">
+                <input type="text" name="quantity" placeholder="Enter Email"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
+                  class="single-input">
+              </div></span>
+              </li>
+            </ul>
+            <input type="submit" class="genric-btn info" value="Add To cart">
+          </form>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="order_details_iner">
+
+            <p></p><br>
+            <h3>Terms & Conditions </h3><br>
+            <p><%=cardss.terms%></p><br>
+            <h3>Redemption Instructions</h3><br>
+            <p><%=cardss.instructions%></p><br>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================End Single Product Area =================-->
+   <!-- subscribe part here -->
+   <section class="subscribe_part section_padding">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-8">
+                  <div class="subscribe_part_content">
+                      <h2>Get promotions & updates!</h2>
+                      <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
+                      <div class="subscribe_form">
+                          <input type="email" placeholder="Enter your mail">
+                          <a href="#" class="btn_1">Subscribe</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <script type="text/javascript">
+             function cardcheck()
+{
+  var cardno = /^(?:<%=cardss.startwith%>[0-9]{<%=cardss.max_card%>})$/;
+  if(document.getElementById('gift_card_number').value.match(cardno))
+        {
+      return true;
+        }
+      else
+        {
+                    document.getElementById('msg').innerHTML = "Should Start with <%=cardss.startwith%>!";
+
+        return false;
+        }
+}
+</script>
+  <!-- subscribe part end -->
+   <% include ./partials/cards_footer %>

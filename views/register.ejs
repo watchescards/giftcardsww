@@ -1,0 +1,90 @@
+<% include ./partials/header %>
+
+    <!-- Slider Area Start-->
+    <div class="services-area">
+        <div class="container">
+            <!-- Section-tittle -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-12">
+                    <div class="section-tittle text-center mb-10">
+             <!--            <span>Contact</span> -->
+                        <h2>SignUp</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Slider Area End-->
+
+    <!-- ================ contact section start ================= -->
+    <section class="contact-section">
+            <div class="container">
+                
+    
+    
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Hi, There</h2>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="media contact-info">
+                           <!--  <span class="contact-info__icon"><i class="ti-home"></i></span> -->
+                            <div class="media-body">
+                                <h3>Dont Have an Account ?</h3>
+                                <p>SignUp</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                          
+                            <div class="media-body">
+                                <h3>Forgot Password ?</h3>
+                               <a href="/forgot-password"> <p>Click Here</p></a>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                           
+                            <div class="media-body">
+                                <h3>Having Toruble Signing Up ?</h3>
+                                <a href="/contact"> <p>Click Here</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="form-contact" action="/signup" method="POST"novalidate="novalidate">
+                            <div class="row">
+                            <h3 style="text-align: center;">Signup</h3><br>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="username" id="subject" type="text"  placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="email" id="subject" type="text"  placeholder="Email Id">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="password" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="submit" class="button button-contactForm boxed-btn" value="Login">
+                            </div>
+                        </form>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+    <!-- ================ contact section end ================= -->
+    
+         <!-- have-project Start-->
+       
+        <!-- have-project End -->
+    
+      </main>
+<% include ./partials/footer %>

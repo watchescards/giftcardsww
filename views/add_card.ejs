@@ -1,0 +1,120 @@
+<% include ./partials/header %>
+	
+	<!-- slider Area Start-->
+	<div class="slider-area ">
+		<!-- Mobile Menu -->
+		<div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/category.jpg">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="hero-cap text-center">
+							<h2>Add card</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- slider Area End-->
+
+	<!-- Start Sample Area -->
+
+	<!-- End Sample Area -->
+
+	<!-- Start Button -->
+
+	<!-- End Button -->
+
+	<!-- Start Align Area -->
+	<div class="whole-wrap">
+		<div class="container box_1170">
+			
+	
+		
+
+			<div class="section-top-border">
+				<div class="row">
+					<div class="col-lg-8 col-md-8">
+						<h3 class="mb-30">Add Card Details </h3>
+						<form action="/add_card" method="POST" enctype="multipart/form-data">
+							<div class="mt-10">
+								<input type="text" name="card_name" placeholder="Card Name"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
+									class="single-input">
+							</div>
+						
+
+							<div class="mt-10">
+								<textarea class="single-textarea" name="card_description" placeholder="Card Description" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = 'Message'" required></textarea>
+							</div>
+							<div class="mt-10">
+								<input type="text" name="max_card" placeholder="Card Max Number"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Card Max Number'" required
+									class="single-input-primary">
+							</div>
+							<div class="mt-10">
+								<input type="text" name="max_pin" placeholder="Card Max Pin"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Card Max Pin'" required
+									class="single-input-accent">
+							</div>
+							<div class="mt-10">
+								<input type="text" name="policy" placeholder="Policy"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Policy'"
+									required class="single-input-secondary">
+							</div>
+							<div class="mt-10">
+								<input type="text" name="customer_care" placeholder="customer_care"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'customer_care'"
+									required class="single-input-secondary">
+							</div>
+
+							<div class="mt-10">
+								<input type="text" name="hq" placeholder="Head Quarters"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Head Quarters'"
+									required class="single-input-secondary">
+							</div>
+							<div class="mt-10">
+								<textarea class="single-textarea" name="terms" placeholder="Terms & Conditions"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Terms & Conditions'"
+									required class="single-input-secondary"></textarea>
+							</div>
+							<div class="mt-10">
+							<textarea class="single-textarea" name="instructions" placeholder="Instructions"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Instructions '"
+									required class="single-input-secondary"></textarea>
+							</div>
+								<div class="mt-10">
+								<input type="file" name="card_image" placeholder=""
+									
+									required class="single-input-secondary">
+							</div>
+								<div class="mt-10">
+								<input type="submit" value="Add Card" placeholder=""
+									
+									required class="single-input-secondary">
+							</div>
+
+							
+						</form>
+					</div>
+					<div class="col-lg-3 col-md-4 mt-sm-30">
+						<div class="single-element-widget">
+							<h3 class="mb-30">Cards Insite</h3>
+							<div class="switch-wrap d-flex justify-content-between">
+								<%var i=1;cards.forEach(list=>{%>
+								<p><%=i%>. <%=list.card_name%><br><br></p>
+								<%i++;});%>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Align Area -->
+
+	 <% include ./partials/footer %>
